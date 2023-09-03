@@ -1,0 +1,126 @@
+@charset "UTF-8";
+/* 전체글꼴 */
+body, pre {font-family: 'Noto Serif KR', serif;}
+.h_color {background-color: rgb(235, 227, 219);border-color:  rgb(235, 227, 219);}
+/* pre  {font-family: '바탕체';font-weight: bold;} */
+header {position:fixed;width:100%;}
+[title="버튼과ul"] > h5, [title="버튼과ul"] > ul > li {overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+/* #nav_head : 바탕색 */
+#nav_head {background:url('../../images/layout/headerotherbg.png') repeat;padding-bottom: 5px;}
+#nav_보기숨기기버튼바탕색 {background-color: white; }
+/* 넓이 */
+#보기_숨기기버튼, 
+#nav_회사, 
+#모든_버튼과UL그룹묶음, 
+#sub_list_wrap, 
+#sub_list,
+#소제목과list
+{width:82%; margin: 0 auto;}
+
+#보기_숨기기버튼 {padding: 5px 0px;}
+#보기_숨기기버튼 button {padding:0px 5px;height:30px;}
+#nav_회사 {vertical-align:top;}
+
+/* #nav_헤드버튼2그룹>div:nth-of-type(odd) {width:67%;display:inline-block}
+#nav_헤드버튼2그룹>div:nth-of-type(even) {width:27%; text-align: right;display:inline-block} */
+
+#모든_버튼과UL그룹묶음 {display:block;}
+#모든_버튼과UL그룹묶음 div {display:inline-block; width:375px;vertical-align: text-top;}
+#모든_버튼과UL그룹묶음 div ul {margin-right: 10px;padding:5px 10px;background-color: rgb(179, 202, 202);border-radius: 10px;}
+#모든_버튼과UL그룹묶음 div ul li {padding:2px;}
+#모든_버튼과UL그룹묶음 button {margin-bottom: 5px;}
+
+#소제목과list {text-align: left;}
+/* #소제목과list h1 {margin-right: 15px;padding:7px;background-color: rgb(25, 135, 84);border-radius: 10px;} */
+#소제목과list ol {margin-right: 15px;padding:5px 10px;background-color: rgb(179, 202, 202);border-radius: 10px;}
+/* #소제목과list ol li {font-size: larger;font-weight: bold;margin:2px;} */
+#소제목과list ol li {margin:2px;}
+
+/* inline요소인 img와 embed를 가운데 정렬하기 위해서 display:block 속성 적용 */
+section > img,
+section > embed {border:1px solid rgb(197, 179, 179);margin:0 auto;display:block} 
+/* section > :not(img),
+section > :not(embed) {width:60%;margin:0 auto;text-align: left;padding:5px;} 안되서 밑에껄로 했음*/ 
+section > li, section > h4, section > h5, section > h6, section pre {width:60%;margin:0 auto;text-align: left;padding:5px;}
+
+section > li {padding:2px;}  /* h5와 높이 맞춤 */
+
+section > h4 {font-size: 24px;}  /* h5크기로 지정 */
+section > li, section > h5, pre {font-size: 20px;}  /* h5크기로 지정 */
+section > li, section > h5 {text-indent: 30px;}/* 들여쓰기 */
+section > h6 {text-indent: 60px;font-weight: bold;}/* 더 들여쓰기  굵게*/
+section > .li_들작 {text-indent: 60px;} /* li의 점 위치만큼 더 들여씀*/
+section > .li_들작들작 {text-indent: 83px;} /* li의 점 위치만큼 더 들여씀*/
+section > .h5_번들작 {text-indent: 53px;} /* h5의 번호아래 들작 */
+section > .h5_번들번들작 {text-indent: 75px;} /* h5의 번호아래 들작 */
+section > .h5_번들번들작_들작 {text-indent: 90px;} 
+/* 1143px(60%)고정이 필요한가? */
+section > #스크립트로ul추가 {width:60%;margin:0 auto; background-color: aqua;margin-bottom: 15px;border-radius: 10px;} 
+section > #스크립트로ul추가 * {padding:5px;}
+section > #스크립트로ul추가 > ul {margin-bottom: 0px;}  /* ?? */
+section > #스크립트로ul추가 > ul > li {list-style:none;}  /* 점이 왼쪽으로 간다. 대충 해놓은것 */
+section > #스크립트로ul추가 li {font-size: 20px;}  /* h5크기로 지정 */
+section > #스크립트로ul추가 li, section > #스크립트로ul추가 h5 {text-indent: 30px;}/* 들여쓰기 */
+section > #스크립트로ul추가 h6 {text-indent: 60px;font-weight: bold;}/* 더 들여쓰기  굵게*/
+
+.content {list-style: none;} /* sub list로갔을때 적용 */
+.content:hover {background-color: cadetblue;} /* sub list로갔을때 적용 */
+#결과물집합, #결과{display:none;}
+
+/* top 으로 이동하는 버튼*/
+.back-to-top-css {
+    cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    opacity: 0.5;
+    /* display: none; */
+}
+.back-to-top-css:hover {opacity: 1;}
+
+/* 갤럭시 탭 S7 FE : 1205PX 그림이 더커질때 100%는 그림기준인데...*/
+@media (max-width:1300px) {
+    #보기_숨기기버튼, 
+    #모든_버튼과UL그룹묶음, 
+    #sub_list_wrap, 
+    #sub_list,
+    #nav_회사,
+    #소제목과list
+    {width:100%; margin: 0 auto;padding:0 20px;}
+
+    #모든_버튼과UL그룹묶음 div {display:inline-block; width:380px;vertical-align: text-top;}
+    /* {width:100%; margin: 0 auto;padding:0 20px;} */
+    #nav_회사 {text-indent: 65px;display:inline-block;} /*줄었을때 위로아래로 공간 text-indent */
+
+    #nav_회사>div {display:inline-block}
+
+    #보기_숨기기버튼 {margin-bottom: 5px;padding: 5px 20px;}
+
+    section > li, section > h4, section > h5, section > h6, section pre,
+    /* #결과 {width:1205px;margin:0 20px 0 0 auto;text-align: left;}
+    section > li, section > h4, section > h5, section > h6, section pre, section > #스크립트로ul추가 {width:1175px} */
+    #결과 {width:100%;margin:0 20px 0 0 auto;text-align: left;}
+    section > li, section > h4, section > h5, section > h6, section pre, section > #스크립트로ul추가 {width:98%}
+    section > #스크립트로ul추가 {background-color: aqua;margin-bottom: 15px;border-radius: 10px;} 
+    section > #스크립트로ul추가 * {padding:5px;}
+    section > #스크립트로ul추가 > ul {margin-bottom: 0px;} 
+    section > #스크립트로ul추가 > ul > li {list-style:none;}  /*점이 왼쪽으로 간다. 대충 해놓은것*/
+    section > #스크립트로ul추가 li {font-size: 20px;}  /*h5크기로 지정 */
+    section > #스크립트로ul추가 li, section > #스크립트로ul추가 h5 {text-indent: 30px;}/* 들여쓰기 */
+    section > #스크립트로ul추가 h6 {text-indent: 60px;font-weight: bold;}/* 더 들여쓰기  굵게 */
+
+    #nav_head {width:100%;}
+
+    /* #nav_회사 button, #nav_보기숨기기버튼바탕색 button {font-size:14px;} */
+
+}
+
+/* my용*/
+.my_nav_width {width:84%;}
+@media (max-width:1300px) {
+    .my_nav_width {width:100%;}
+
+}
+
+
+/* 850 */

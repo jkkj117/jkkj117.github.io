@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- head 안에.. -->
+<!-- cdn으로 연결하여 css를 사용할수 있게 함.다운받아서 연결하는 방법도 있다.. -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<!--업무참고 css-->
+<link href="portal/assets/css/default.css" rel="stylesheet">
+<!--구글폰트 font-family: 'Noto Serif KR', serif;> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- 상단 nav -->
+<!-- 공통 fixed용 -->
+<header id="head_button_group" class="container-fluid fixed-top" style="background-color: rgb(247, 244, 241);">
+
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
+  <nav class="navbar bg-body-tertiary pt-1 m-0">    
+    <div class="container-fluid my_nav_width"">
+
+      <!--디바이스 작아지면 버튼으로 변해서 누르면 class="collapse navbar-collapse" id="navbarSupportedContent" 부분이 드랍다운된다.-->
+      <div>
+        <!--숨김아이콘버튼 누르면 아이디찾아서 보기 안보기 -->
+        <button class="navbar-toggler d-inline-block p-0 me-2" type="button" data-bs-toggle="collapse" 
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-brand d-inline-block m-0 p-0">
+          <a class="navbar-brand dropdown-item">부트스트랩</a>
+        </div>
+        <a id="a_리스트보기숨기기" class="btn btn-light m-0" onclick="main_list_viewHide()">리스트 보기중</a>
+        <a id="a_소제목보기숨기기" class="btn btn-light m-0" onclick="sub_list_showHide()">소제목 숨김중</a>
+        <a class="btn btn-light m-0" onclick="결과임시_보기_숨기기()">결과파일 숨김중</a>
+        <button class="m-0 p-0" onclick="
+        var con=document.querySelectorAll('.임시확인');
+        var 패딩;
+        var 마진;
+        for (var i=0; i<con.length; i++) {
+          패딩=getComputedStyle(con[i]).padding;
+          마진=getComputedStyle(con[i]).margin;
+          텍스트얼라인=getComputedStyle(con[i]).textAlign;
+          버티컬얼라인=getComputedStyle(con[i]).verticalAlign;
+          박스사이징=getComputedStyle(con[i]).boxSizing;
+          폰트사이즈=getComputedStyle(con[i]).fontSize;
+          라인하이트=getComputedStyle(con[i]).lineHeight;
+          하이트=getComputedStyle(con[i]).height;
+            alert('태그 : ' + con[i].tagName + ' 패딩 :' + 패딩 + ' 마진 : ' + 마진 
+            + '\ntextalign : ' + 텍스트얼라인
+            + ' verticalAlign : ' + 버티컬얼라인 
+            + '\nboxSizing : ' + 박스사이징
+            + ' fontSize : ' + 폰트사이즈
+            + '\nlineHeight : ' + 라인하이트
+            + '\nHeight : ' + 하이트);
+        }
+        ">임시확인</button>
+        <!--숨김아이콘버튼 누르면 아이디찾아서 보기 안보기 -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 pt-3">
+            <li class="nav-item dropdown me-2">
+              <a class="active nav-link dropdown-toggle" href="#" 
+                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                링크이동
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="customs.html">세관</a></li>
+                <!-- <li><hr class="dropdown-divider"></li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+  </nav>
+</header>
+<div style="height:5px;"></div><!-- main과 띄우기용 -->
+<!-- 공통 fixed용 끝 -->
+
+<!-- 위에까지는 어느정도 된것같다. -->
+<!-- 리스트.실질적 정보 트리 position: absolute 자리안차지하게 이거하면 왼쪽을 붙는다.-->   
+<!-- 스트립트로 visibility: hidden 과 visible 조정 id참고, position: absolute(왼쪽붙음,자리안차지);position:relative(자리차지) 조정-->  
+
+<div id="main정보보기">
+  <div id="모든_버튼과UL그룹묶음">
+    <div title="버튼과ul">
+      <button class="btn btn-success" type="button" onclick="sub_list_Show(event)">
+        편집 편의
+      </button>
+      <ul>
+        <li class="content" title="" data-title="결과물_id">데스트탑 UL : 369px, 탭 : 276px </li>
+      </ul>
+    </div> 
+
+    <div title="버튼과ul">
+      <button class="btn btn-success" type="button" onclick="sub_list_Show(event)">
+      1
+      </button>
+      <ul>
+        <li class="content" title="" data-title="결과물_id">1</li>
+      </ul>
+    </div> 
+
+    <div title="버튼과ul">
+      <button class="btn btn-success" type="button" onclick="sub_list_Show(event)">
+      메모
+      </button>
+      <ul>
+        <li class="content" title="03_메모_01_flex_배열_화면대로ul높이맞추기" data-title="결과물_id">배열, 화면대로ul높이맞추기</li>
+        <li class="content" title="03_메모_02_ul높이맞추기flex아니네" data-title="결과물_id">ul높이맞추기flex아니네</li>
+      </ul>
+    </div> 
+
+    <div title="버튼과ul">
+      <button class="btn btn-success" type="button" onclick="sub_list_Show(event)">
+      메모
+      </button>
+      <ul>
+        <li class="content" title="" data-title="결과물_id">첨부서류사후제출 경우 있으면 캡쳐</li>
+        <li class="content" title="04_메모_02_자바스크립트메모장" data-title="결과물_id">자바스크립트메모장</li>
+      </ul>
+    </div> 
+  </div>
+</div> <!-- 모든_버튼과UL그룹묶음 + 서브리스트 -->
+
+<div id="소제목과list">
+</div>
+
+<div id="content_편집중">
+</div>
+
+<div id="결과">
+</div>
+
+<!-- 모든파일 아이디 처리.. 공백넣기 : &nbsp; -->
+<div id="결과물집합">
+  <!-- 그림 100%를위하여 겉에는 100프로 활용 -->
+  <!-- h2 ol을 자동으로 생성하는게 목표. div ol 아래부터 실질적 편집. h4 1. li div로 묶어야함. -->
+  <section id="03_메모_01_flex_배열_화면대로ul높이맞추기"><div id="스크립트로ul추가"></div>
+    <embed src="portal/images/문서연결_메모/03_메모_01_flex_배열_화면대로ul높이맞추기.txt" width=1140px height=700px>
+    <br><br><br><br>
+  </section>
+
+  <section id="03_메모_02_ul높이맞추기flex아니네"><div id="스크립트로ul추가"></div>
+    <embed src="portal/images/문서연결_메모/03_메모_02_ul높이맞추기flex아니네.txt" width=1140px height=700px>
+    <br><br><br><br>
+  </section>
+
+  <section id="04_메모_02_자바스크립트메모장"><div id="스크립트로ul추가"></div>
+    <embed src="portal/images/문서연결_메모/04_메모_01_자바스크립트메모장.txt" width=1140px height=800px>
+    <br><br><br><br>
+  </section>
+
+  <section id="">
+    <div id="스크립트로ul추가"></div><h4>&#9634; </h4>
+    <h4>1.</h4>
+    <img src="" alt="이미지없음">
+    <h4>1. <span style="font-size: 20px;"></span></h4>
+    <li>조그맣게 설명.</li>
+    <img src="" alt="이미지없음">
+  </section>
+  <!-- 기본구조 끝--> 
+</div>
+
+
+<a id="back-to-top" href="#" class="btn btn-primary btn-sm back-to-top-css" ondblclick="location.href='my_index.html'"
+role="button" title="Move Top" data-toggle="tooltip" data-placement="left">
+<span>Top</span></a>
+
+<!-- 부트스트랩.body 맨 마지막에.. -->
+<!-- 부트스트랩.cdn으로 사용하게 함. js를 다운받아서 폴더만들어서 연결하는방법도 있다.. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+</script>
+<script src="portal/assets/js/custom_js.js"></script>
+
+</body>
+
+</html>

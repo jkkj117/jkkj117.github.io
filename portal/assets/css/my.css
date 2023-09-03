@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 전체글꼴 */
+body, pre {font-family: 'Noto Serif KR', serif;}
+
+
+
+/* .nav-item은 li */
+#head_button_group .nav-item {border-radius: 5px;margin-left:1px;}
+#선택한_소주제모음_목차생성 > ol {padding-left:20px;}
+#선택한_소주제모음_목차생성 ol>ol {padding-left:15px;}
+#선택한_소주제모음_목차생성 li {border-bottom: 1px solid rgb(228, 212, 212);}
+
+#전체크기_사와팔_기록용[title='전체크기'] ~ #선택한_소주제모음_두가지정보모음 #선택한_소주제모음_목차생성 {width:100%;}
+#전체크기_사와팔_기록용[title='전체크기'] ~ #선택한_소주제모음_두가지정보모음 #선택한_소주제모음_정보복사 {width:100%;}
+#전체크기_사와팔_기록용[title='_사와팔_'] ~ #선택한_소주제모음_두가지정보모음 #선택한_소주제모음_목차생성 {width:34%;}
+#전체크기_사와팔_기록용[title='_사와팔_'] ~ #선택한_소주제모음_두가지정보모음 #선택한_소주제모음_정보복사 {width:66%;}
+
+
+
+#예제_균등배분트릭 {
+    margin-left:10px;
+    text-align: justify;
+    line-height: 0.4;
+    position:relative;
+    top:7px;
+}
+#예제_균등배분트릭::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+#예제_균등배분트릭::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+#my_기초_임시width {width:100%;}
+
+@media (max-width:1400px) {
+    #my_기초_임시width {width:1000px;}
+}
+@media (max-width:1200px) {
+    #my_기초_임시width {width:800px;}
+}
+@media (max-width:992px) {
+    #my_기초_임시width {width:600px;}
+}
+@media (max-width:768px) {
+    #my_기초_임시width {width:400px;}
+}
+@media (max-width:576px) {
+    #my_기초_임시width {width:200px;}
+}
